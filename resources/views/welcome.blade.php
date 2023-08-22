@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Great Good</h1>
+    <h1>User Page for Development</h1>
 </body>
 </html>
