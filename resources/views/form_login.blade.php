@@ -43,14 +43,22 @@ input:focus, button:focus {
             <h2 class="p-3">Account Login</h2>
           </div>
           <div class="card-body">
-            <form>
+            @if(session('message'))
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                
+                  <strong>Notification</strong> {{ session('message') }}
+                </div>
+            @endif
+            <form action="{{ route('account.login') }}" method="POST">
+              @csrf
               <div class="mb-4">
                 <label for="username" class="form-label">Username/Email</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" name="username" class="form-control" id="username" />
               </div>
               <div class="mb-4">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" />
+                <input type="password" name="password" class="form-control" id="password" />
               </div>
               <div class="mb-4">
                 <input type="checkbox" class="form-check-input" id="remember" />

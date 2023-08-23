@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+// use App\Http\Controllers;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('form_login');
-});
+Route::get('/', 'App\Http\Controllers\Account@index')->name('home');
+
+Route::post('/account-login','App\Http\Controllers\Account@account_login')->name('account.login');
